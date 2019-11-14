@@ -1,0 +1,62 @@
+#cyton
+cd lib
+make clean
+make
+cd ..
+
+# visual-genome data links
+cd data/visual_genome
+
+ln -s /specific/netapp5_2/gamir/DER-Roei/SceneGrapher/Data/VisualGenome/data JPEGImages
+ln -s /specific/netapp5_2/gamir/DER-Roei/SceneGrapher/FilesManager/Data/VisualGenome/Referring/filtered_data_referring_test.p test.p
+ln -s /specific/netapp5_2/gamir/DER-Roei/SceneGrapher/FilesManager/Data/VisualGenome/Referring/filtered_data_referring_train.p train.p
+
+# download image-net weights
+mkdir -p data/imagenet_weights
+cd data/imagenet_weights
+wget -v http://download.tensorflow.org/models/resnet_v1_101_2016_08_28.tar.gz
+tar -xzvf resnet_v1_101_2016_08_28.tar.gz
+mv resnet_v1_101.ckpt res101.ckpt
+cd ../..
+
+# links to coco weights
+cd output/res101/visual_genome/default
+ln -s /specific/netapp5_2/gamir/DER-Roei/GPIRR/output/res101/coco_2014_train+coco_2014_valminusminival/res101_faster_rcnn_iter_1190000.ckpt.data-00000-of-00001 res101_faster_rcnn_iter_1.ckpt.data-00000-of-00001
+ln -s /specific/netapp5_2/gamir/DER-Roei/GPIRR/output/res101/coco_2014_train+coco_2014_valminusminival/res101_faster_rcnn_iter_1190000.ckpt.index res101_faster_rcnn_iter_1.ckpt.index
+ln -s /specific/netapp5_2/gamir/DER-Roei/GPIRR/output/res101/coco_2014_train+coco_2014_valminusminival/res101_faster_rcnn_iter_1190000.ckpt.meta res101_faster_rcnn_iter_1.ckpt.meta
+ln -s /specific/netapp5_2/gamir/DER-Roei/GPIRR/output/res101/coco_2014_train+coco_2014_valminusminival/res101_faster_rcnn_iter_1190000.pkl res101_faster_rcnn_iter_1.pkl
+
+# download clevr - rr
+cd data
+echo "Downloading CLEVR..."
+wget https://cs.stanford.edu/people/ranjaykrishna/referringrelationships/clevr.zip
+unzip clevr
+rm clevr.zip
+# download images from https://cs.stanford.edu/people/jcjohns/clevr/
+#or link
+cd clevr
+ln -s /specific/netapp5_2/gamir/DER-Roei/GPIRR/data/clevr/CLEVR_v1.0 CLEVR_v1.0 
+cd ../../
+
+
+# download VRD
+cd data
+wget https://cs.stanford.edu/people/ranjaykrishna/referringrelationships/vrd.zip
+unzip vrd.zip
+rm vrd.zip
+cd ,,
+
+# download vg
+cd data
+wget https://cs.stanford.edu/people/ranjaykrishna/referringrelationships/visualgenome.zip
+unzip visualgenome.zip
+rm visualgenome.zip
+cd VisualGenome
+ln -s /specific/netapp5_2/gamir/DER-Roei/SceneGrapher/Data/VisualGenome/data JPEGImages
+cd ..
+
+#run - vg
+./experiments/scripts/train_faster_rcnn.sh 0 visual_genome res101
+
+#run - clevr
+./experiments/scripts/train_faster_rcnn.sh 3 clevr res101
