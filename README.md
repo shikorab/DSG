@@ -13,7 +13,7 @@ TBD
 
 ## Setup
 
-# Compile Cyton
+### Compile Cyton
 ```
 cd lib
 make clean
@@ -21,7 +21,7 @@ make
 cd ..
 ```
 
-# Download image-net weights
+### Download image-net weights
 ```
 mkdir -p data/imagenet_weights
 cd data/imagenet_weights
@@ -30,7 +30,7 @@ tar -xzvf resnet_v1_101_2016_08_28.tar.gz
 mv resnet_v1_101.ckpt res101.ckpt
 cd ../..
 ```
-# download Visual Genome Dataset
+### Download Visual Genome Dataset
 ```
 cd data
 wget https://cs.stanford.edu/people/ranjaykrishna/referringrelationships/visualgenome.zip
