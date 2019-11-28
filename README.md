@@ -30,7 +30,7 @@ tar -xzvf resnet_v1_101_2016_08_28.tar.gz
 mv resnet_v1_101.ckpt res101.ckpt
 cd ../..
 ```
-# download vg
+# download Visual Genome Dataset
 ```
 cd data
 wget https://cs.stanford.edu/people/ranjaykrishna/referringrelationships/visualgenome.zip
