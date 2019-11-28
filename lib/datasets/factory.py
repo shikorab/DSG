@@ -11,7 +11,6 @@ from __future__ import division
 from __future__ import print_function
 
 __sets = {}
-from datasets.vg import vg
 from datasets.clevr import clevr
 from datasets.visualgenome import visualgenome
 from datasets.vrd import vrd

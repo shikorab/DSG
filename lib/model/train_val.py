@@ -7,11 +7,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from model.config import cfg
 import roi_data_layer.roidb as rdl_roidb
+from model.config import cfg
 from roi_data_layer.layer import RoIDataLayer
 from utils.timer import Timer
-import keras as k
 
 try:
     import cPickle as pickle
@@ -19,15 +18,12 @@ except ImportError:
     import pickle
 import numpy as np
 import os
-import sys
 import glob
-import time
 import math
 
 import tensorflow as tf
 from tensorflow.python import pywrap_tensorflow
-from model.bbox_transform import clip_boxes, bbox_transform_inv
-from utils.cython_bbox import bbox_overlaps
+from model.bbox_transform import bbox_transform_inv
 
 
 def _clip_boxes(boxes, im_shape):
@@ -283,7 +279,7 @@ class SolverWrapper(object):
                                                                                    str(sfiles[-1]),
                                                                                    str(nfiles[-1]))
         self.saver = tf.train.Saver(max_to_keep=100000, reshape=True)
-        iter = 1
+        iter = last_snapshot_iter + 1
         np_paths = []
         ss_paths = []
         # Make sure the lists are not empty
@@ -303,9 +299,12 @@ class SolverWrapper(object):
                 next_stepsize = stepsizes.pop()
 
             if not just_test:
+                print('Train - Epoch {0}.'.format(iter))
                 self.run_epoch(iter, self.data_layer, "train", sess, lr, train_op)
+                print('Validation - Epoch {0}.'.format(iter))
                 result = self.run_epoch(iter, self.data_layer_val, "validation", sess, lr, None)
             else:
+                print('Test')
                 self.run_epoch(iter, self.data_layer_val, "test", sess, lr, None)
                 result = - 1.0
 
@@ -485,8 +484,6 @@ def train_net(network, imdb, roidb, valroidb, output_dir, tb_dir,
               pretrained_model=None,
               max_iters=100, just_test=False):
     """Train a Faster R-CNN network."""
-    # pretrained_model="output/res101/VisualGenome/default/gpir_imagenet_baseline_iter_7.ckpt"
-    # just_test=True
 
     tfconfig = tf.ConfigProto(allow_soft_placement=True)
     tfconfig.gpu_options.allow_growth = True

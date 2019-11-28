@@ -18,9 +18,7 @@ import numpy as np
 import sys
 
 import tensorflow as tf
-from nets.vgg16 import vgg16
 from nets.resnet_v1 import resnetv1
-from nets.mobilenet_v1 import mobilenetv1
 from random import shuffle
 import random
 
@@ -48,7 +46,7 @@ def parse_args():
                       help='tag of the model',
                       default=None, type=str)
   parser.add_argument('--net', dest='net',
-                      help='vgg16, res50, res101, res152, mobile',
+                      help='res101',
                       default='res50', type=str)
   parser.add_argument('--set', dest='set_cfgs',
                       help='set config keys', default=None,

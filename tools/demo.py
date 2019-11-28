@@ -27,9 +27,6 @@ import numpy as np
 import os, cv2
 import argparse
 
-from nets.vgg16 import vgg16
-from nets.resnet_v1 import resnetv1
-
 CLASSES = ('__background__',
            'aeroplane', 'bicycle', 'bird', 'boat',
            'bottle', 'bus', 'car', 'cat', 'chair',
