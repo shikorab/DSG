@@ -65,13 +65,13 @@ TBD
 Please cite our paper if you use this code in your own work:
 ```
 @InProceedings{raboh2020dsg,
-  title = 	 {Differentiable Scene Graphs},
-  author = 	 {Moshiko Raboh and
-              Roei Herzig and
-              Gal Chechik and
-              Jonathan Berant and
-              Amir Globerson},
+  title = {Differentiable Scene Graphs},
+  author = {Moshiko Raboh and
+            Roei Herzig and
+            Gal Chechik and
+            Jonathan Berant and
+            Amir Globerson},
   booktitle = {Winter Conference on Applications of Computer Vision},
-  year = 	 {2020}
+  year = {2020}
 }
 ```
