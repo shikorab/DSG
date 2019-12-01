@@ -64,21 +64,14 @@ TBD
 ## Cite
 Please cite our paper if you use this code in your own work:
 ```
-@article{DBLP:journals/corr/abs-1902-10200,
-  author    = {Moshiko Raboh and
-               Roei Herzig and
-               Gal Chechik and
-               Jonathan Berant and
-               Amir Globerson},
-  title     = {Learning Latent Scene-Graph Representations for Referring Relationships},
-  journal   = {CoRR},
-  volume    = {abs/1902.10200},
-  year      = {2019},
-  url       = {http://arxiv.org/abs/1902.10200},
-  archivePrefix = {arXiv},
-  eprint    = {1902.10200},
-  timestamp = {Tue, 21 May 2019 18:03:39 +0200},
-  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1902-10200},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+@InProceedings{raboh2020dsg,
+  title = 	 {Differentiable Scene Graphs},
+  author = 	 {Moshiko Raboh and
+              Roei Herzig and
+              Gal Chechik and
+              Jonathan Berant and
+              Amir Globerson},
+  booktitle = {Winter Conference on Applications of Computer Vision},
+  year = 	 {2020}
 }
 ```
