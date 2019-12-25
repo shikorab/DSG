@@ -4,7 +4,7 @@
 This repository contains code used to produce the results in our paper.
 
 ## Introduction
-We propose an intermediate “graph-like” representation (DSGs) that can be learned in an end-to-end manner from the supervision for a downstream visual reasoning task, which achieves a new state-of-the-art results on Referring Relationships task.
+We propose an intermediate “graph-like” representation (DSGs) that can be learned in an end-to-end manner from the supervision for a downstream visual reasoning task, which achieves a new state-of-the-art results on Referring Relationships[1] task.
 
 ### Our novel contributions are:
 1. **Differentiable Scene-Graph layer**, which captures the information about multiple entities in an image and their relations. 
@@ -14,7 +14,11 @@ We propose an intermediate “graph-like” representation (DSGs) that can be le
 ## Method
 <img src="figure2_arch9_iccv_RH.jpg" width="750">
 
-The proposed architecture: The input consists of an image and a relationship query triplet <subject, relation, object>. (1) A detector produces a set of bounding box proposals. (2) An *RoiAlign* layer extracts object features from the backbone using the boxes. In parallel, every pair of box proposals is used for computing a union box, and  pairwise features  extracted in the same way as object features. (3) These features are used as inputs to a Differentiable Scene-Graph Generator Module which outputs the Differential Scene Graph, a new and improved set of node and edge features. (4) The DSG is used for both refining the original box proposals, as well as a Referring Relationships Classifier, which classifies each bounding box proposal as either *Subject*, *Object*, *Other* or *Background*. The ground-truth label of a proposal box will be *Other* if this proposal is involved in another query relationship over this image. Otherwise the ground truth label will be *Background*.
+The proposed architecture: The input consists of an image and a relationship query triplet <subject, relation, object>. 
+1. A detector produces a set of bounding box proposals. 
+2. An *RoiAlign* layer extracts object features from the backbone using the boxes. In parallel, every pair of box proposals is used for computing a union box, and  pairwise features  extracted in the same way as object features. 
+3. These features are used as inputs to a Differentiable Scene-Graph Generator Module which outputs the Differential Scene Graph, a new and improved set of node and edge features. 
+4. The DSG is used for both refining the original box proposals, as well as a Referring Relationships Classifier, which classifies each bounding box proposal as either *Subject*, *Object*, *Other* or *Background*. The ground-truth label of a proposal box will be *Other* if this proposal is involved in another query relationship over this image. Otherwise the ground truth label will be *Background*.
 
 
 ## Model implementation
