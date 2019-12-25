@@ -4,6 +4,11 @@
 ## Introduction
 We propose an intermediate “graph-like” representation (DSGs) that can be learned in an end-to-end manner from the supervision for a downstream visual reasoning task, which achieves a new state-of-the-art results on Referring Relationships task.
 
+### Our novel contributions are:
+1. **Differentiable Scene-Graph layer**, which captures information about multiple entities in an image and their relations. 
+2. **A new architecture** for the task of referring relationships, using a DSG as its central component
+3. **New state-of-theart results** on the task of referring relationships on the Visual Genome, VRD and CLEVR datasets.
+
 ## Method
 <img src="figure2_arch9_iccv_RH.jpg" width="750">
 
