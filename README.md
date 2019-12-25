@@ -20,9 +20,6 @@ The proposed architecture: The input consists of an image and a relationship que
 3. These features are used as inputs to a Differentiable Scene-Graph Generator Module which outputs the Differential Scene Graph, a new and improved set of node and edge features. 
 4. The DSG is used for both refining the original box proposals, as well as a Referring Relationships Classifier, which classifies each bounding box proposal as either *Subject*, *Object*, *Other* or *Background*. The ground-truth label of a proposal box will be *Other* if this proposal is involved in another query relationship over this image. Otherwise the ground truth label will be *Background*.
 
-## Model implementation
-TBD
-
 ## Dependencies
 TBD
 
