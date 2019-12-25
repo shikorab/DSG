@@ -71,6 +71,9 @@ Test a pre trained model:
 ## About this repository
 TBD
 
+## References
+[1] Ranjay Krishna, Ines Chami, Michael Bernstein, Li Fei-Fei, [Referring Relationships](https://arxiv.org/abs/1803.10362), CVPR 2018.
+
 ## Cite
 Please cite our paper if you use this code in your own work:
 ```
