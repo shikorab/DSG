@@ -9,7 +9,7 @@ We propose an intermediate “graph-like” representation (DSGs) that can be le
 ### Our novel contributions are:
 1. **Differentiable Scene-Graph layer**, which captures the information about multiple entities in an image and their relations. 
 2. **A new architecture** for the task of referring relationships, using a DSG as its central component.
-3. **New state-of-theart results** on the task of referring relationships on the Visual Genome, VRD and CLEVR datasets.
+3. **New state-of-the art results** on the task of referring relationships on the Visual Genome, VRD and CLEVR datasets.
 
 ## Method
 <img src="figure2_arch9_iccv_RH.jpg" width="750">
@@ -20,9 +20,8 @@ The proposed architecture: The input consists of an image and a relationship que
 3. These features are used as inputs to a Differentiable Scene-Graph Generator Module which outputs the Differential Scene Graph, a new and improved set of node and edge features. 
 4. The DSG is used for both refining the original box proposals, as well as a Referring Relationships Classifier, which classifies each bounding box proposal as either *Subject*, *Object*, *Other* or *Background*. The ground-truth label of a proposal box will be *Other* if this proposal is involved in another query relationship over this image. Otherwise the ground truth label will be *Background*.
 
-
 ## Model implementation
-TBD "Differentiable Scene Graphs" implemented on top of "https://github.com/endernewton/tf-faster-rcnn".
+TBD
 
 ## Dependencies
 TBD
@@ -75,7 +74,7 @@ Test a pre trained model:
 `./experiments/scripts/train.sh <gpu-id> visualgenome res101 dsg_pretrained`
 
 ## About this repository
-TBD
+This repository implemented on top of "https://github.com/endernewton/tf-faster-rcnn".
 
 ## References
 [1] Ranjay Krishna, Ines Chami, Michael Bernstein, Li Fei-Fei, [Referring Relationships](https://arxiv.org/abs/1803.10362), CVPR 2018.
