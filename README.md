@@ -1,5 +1,5 @@
 # Differentiable Scene Graphs
-####  Moshiko Raboh*, [Roei Herzig*](https://roeiherz.github.io/), [Gal Chechik](https://chechiklab.biu.ac.il/~gal/), [Jonathan Berant](http://www.cs.tau.ac.il/~joberant/), [Amir Globerson](http://www.cs.tau.ac.il/~gamir/)<img src="sg_example_final.png" width="750">
+####  Moshiko Raboh*, [Roei Herzig*](https://roeiherz.github.io/), [Gal Chechik](https://chechiklab.biu.ac.il/~gal/), [Jonathan Berant](http://www.cs.tau.ac.il/~joberant/), [Amir Globerson](http://www.cs.tau.ac.il/~gamir/)<img src="figure1_iccv.jpg" width="750">
 
 ## Introduction
 We propose an intermediate “graph-like” representation (DSGs) that can be learned in an end-to-end manner from the supervision for a downstream visual reasoning task, which achieves a new state-of-the-art results on Referring Relationships task.
