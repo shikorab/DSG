@@ -21,7 +21,23 @@ The proposed architecture: The input consists of an image and a relationship que
 4. The DSG is used for both refining the original box proposals, as well as a Referring Relationships Classifier, which classifies each bounding box proposal as either *Subject*, *Object*, *Other* or *Background*. The ground-truth label of a proposal box will be *Other* if this proposal is involved in another query relationship over this image. Otherwise the ground truth label will be *Background*.
 
 ## Dependencies
-TBD
+To get started with the framework, install the following dependencies:
+- [Python 3.6.8](https://www.python.org/)
+- [tensorflow-gpu 1.14.0](https://www.tensorflow.org/)
+- [Pillow 6.2.1](http://matplotlib.org/)
+- [opencv-python 4.1.2](http://www.h5py.org/)
+- [scipy 1.4.1](http://www.numpy.org/)
+- [pyyaml 5.2](https://pypi.python.org/pypi/PyYAML)
+
+```
+conda create -n dsg python=3.6.8
+conda activate dsg
+pip install tensorflow-gpu==1.14.0
+pip install Pillow
+pip install opencv-python
+pip install scipy
+pip install pyyaml
+```
 
 ## Setup
 
