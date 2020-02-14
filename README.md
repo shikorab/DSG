@@ -37,6 +37,7 @@ pip install Pillow
 pip install opencv-python
 pip install scipy
 pip install pyyaml
+pip install gast==0.2.2
 ```
 
 ## Setup
