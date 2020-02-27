@@ -23,7 +23,7 @@ The proposed architecture: The input consists of an image and a relationship que
 ## Dependencies
 To get started with the framework, install the following dependencies:
 - [Python 3.6.8](https://www.python.org/)
-- [tensorflow-gpu 1.14.0](https://www.tensorflow.org/)
+- [tensorflow-gpu 1.11.0](https://www.tensorflow.org/)
 - [Pillow 6.2.1](http://matplotlib.org/)
 - [opencv-python 4.1.2](http://www.h5py.org/)
 - [scipy 1.4.1](http://www.numpy.org/)
@@ -32,7 +32,7 @@ To get started with the framework, install the following dependencies:
 ```
 conda create -n dsg python=3.6.8
 conda activate dsg
-pip install tensorflow-gpu==1.14.0
+pip install tensorflow-gpu==1.11.0
 pip install Pillow
 pip install opencv-python
 pip install scipy
@@ -82,10 +82,10 @@ Train a model:
 `./experiments/scripts/train.sh <gpu-id> visualgenome res101 <experiment name>`
 
 Test a model:
-`./experiments/scripts/train.sh <gpu-id> visualgenome res101 <experiment name>_iter_0`
+`./experiments/scripts/test.sh <gpu-id> visualgenome res101 <experiment name>_iter_0`
 
 Test a pre trained model:
-`./experiments/scripts/train.sh <gpu-id> visualgenome res101 dsg_pretrained`
+`./experiments/scripts/test.sh <gpu-id> visualgenome res101 dsg_pretrained`
 
 ## About this repository
 This repository implemented on top of "https://github.com/endernewton/tf-faster-rcnn".
